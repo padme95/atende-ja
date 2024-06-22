@@ -33,8 +33,31 @@ export class LoginComponent implements OnInit {
       console.log('CPF:', cpf);
       console.log('Senha:', senha);
       
-      this.apiService.getToken(cpf, senha).subscribe(x=>{console.log(x)}) ;
+      this.apiService.getToken().subscribe(x=>{
+        console.log("Token SF:" + x);
+        localStorage.setItem("SFToken", x);  
+      }) ;
 
+      var token = localStorage.getItem("SFToken") ?? "";
+
+      this.apiService.userLogin(token, cpf, senha).subscribe(x=> {
+        console.log("Resposta do Login:" + x);
+        if (x != "Usuário não encontrado") {
+          localStorage.setItem("user", x);
+          //redirect home
+        } else {
+          window.alert(x);
+          // Limpa cache
+          localStorage.clear();
+        }
+      })
+
+      // Teste demais APIs
+      this.apiService.consultPatient(token, cpf).subscribe(x => {
+        console.log("Resposta Consulta Paciente");
+        console.log("Paciente Id " + x.id);
+        console.log("Paciente Nome " + x.name);
+      })
 
     } else {
       this.loginForm.markAllAsTouched();
