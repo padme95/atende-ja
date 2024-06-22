@@ -17,6 +17,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { MatNavList } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIcon,
     MatSidenav,
     MatNavList,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [RouterOutlet, provideAnimationsAsync()],

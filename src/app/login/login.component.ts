@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../api.services';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isMenuOpen: boolean = false;
+ 
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private apiService : ApiService) {}
 
   ngOnInit() {
+    
     this.loginForm = this.fb.group({
       cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
       senha: ['', [Validators.required, Validators.minLength(6)]]
     });
+  
   }
 
   toggleMenu() {
@@ -28,8 +32,10 @@ export class LoginComponent implements OnInit {
       const { cpf, senha } = this.loginForm.value;
       console.log('CPF:', cpf);
       console.log('Senha:', senha);
-      // Exemplo simples: redirecionar para outra página após o login
-      // this.router.navigate(['/dashboard']); // import { Router } from '@angular/router';
+      
+      this.apiService.getToken(cpf, senha).subscribe(x=>{console.log(x)}) ;
+
+
     } else {
       this.loginForm.markAllAsTouched();
     }
