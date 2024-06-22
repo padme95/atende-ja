@@ -1,0 +1,47 @@
+<!-- login.component.html -->
+<div class="login-container">
+  <mat-toolbar color="primary" class="login-toolbar">
+    <button mat-icon-button (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-title">Atende Já</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="login-sidenav-container">
+    <mat-sidenav #sidenav mode="side" [opened]="isMenuOpen" class="login-sidenav">
+      <mat-nav-list>
+        <a mat-list-item href="#">Consulta</a>
+        <a mat-list-item href="#">Atendimento</a>
+        <a mat-list-item href="#">Localização</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="login-content">
+      <mat-card class="login-card">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <form [formGroup]="loginForm" class="login-form" fxLayout="column" fxLayoutGap="20px">
+            <mat-form-field appearance="fill">
+              <mat-label>CPF</mat-label>
+              <input matInput type="text" formControlName="cpf" required>
+              <mat-error *ngIf="cpf?.hasError('required')">CPF é obrigatório</mat-error>
+              <mat-error *ngIf="cpf?.hasError('pattern')">CPF deve ter 11 dígitos</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Senha</mat-label>
+              <input matInput type="password" formControlName="senha" required>
+              <mat-error *ngIf="senha?.hasError('required')">Senha é obrigatória</mat-error>
+              <mat-error *ngIf="senha?.hasError('minlength')">Senha deve ter pelo menos 6 caracteres</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="accent" (click)="login()">Entrar</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

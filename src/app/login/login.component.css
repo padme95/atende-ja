@@ -1,0 +1,64 @@
+/* login.component.scss */
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.toolbar-title {
+  margin-left: 12px;
+}
+
+.login-sidenav-container {
+  display: flex;
+  flex: 1;
+  margin-top: 64px; /* Altura do toolbar */
+}
+
+.login-sidenav {
+  width: 200px;
+}
+
+.login-sidenav mat-nav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .login-content {
+    padding: 40px;
+  }
+
+  .login-card {
+    max-width: 500px;
+  }
+}
