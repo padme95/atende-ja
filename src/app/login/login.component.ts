@@ -52,42 +52,7 @@ export class LoginComponent implements OnInit {
           localStorage.clear();
         }
       });
-
-      // Teste demais APIs
-      this.apiService.consultPatient(token, cpf).subscribe(x => {
-        console.log("Resposta Consulta Paciente");
-        console.log("Paciente Id " + x.id);
-        console.log("Paciente Nome " + x.name);
-      });
-
-      this.apiService.consultListHospital(token).subscribe(x => {
-        console.log("Resposta todos os hospitais");
-        console.log(x.forEach(y => {
-          console.log("Hospital Id: " + y.id);
-          console.log("Hospital Nome: " + y.nome);
-        }));
-      });
-
-      this.apiService.consultSpecificHospital(token, "001Dn000017XsX2IAK").subscribe(x => {
-        console.log("Resposta Consulta Hospital Especifico");
-        console.log("Hospital Id " + x.id);
-        console.log("Hospital Nome " + x.nome);
-      });
-
       
-
-      this.apiService.createPatient(token, this.patientMock).subscribe(x=>{
-        console.log("Create Patient:" + x);
-      }) ;
-
-      this.apiService.updatePatient(token, this.patientMockUpdate).subscribe(x=>{
-        console.log("Update Patient:" + x);
-      }) ;
-
-      this.apiService.deletePatient(token, "a0GDn00000Eubj0MAB").subscribe(x=>{
-        console.log("Delete Patient:" + x);
-      }) ;
-
       this.router.navigate(['/selecione-hospital']);
     } else {
       this.loginForm.markAllAsTouched();
