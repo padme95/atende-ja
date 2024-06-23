@@ -20,6 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileComponent } from './profile/profile.component';
 import { SelectionHospitalComponent } from './selection-hospital/selection-hospital.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth.guard';
+import { LoginGuard } from './auth.login.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule
 
   ],
-  providers: [RouterOutlet, provideAnimationsAsync()],
+  providers: [RouterOutlet, provideAnimationsAsync(),
+    AuthGuard, LoginGuard
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

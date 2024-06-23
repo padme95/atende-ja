@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SelectionHospitalComponent } from './selection-hospital/selection-hospital.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './auth.guard';
+import { LoginGuard } from './auth.login.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'selecione-hospital', component: SelectionHospitalComponent },
+  { path: 'selecione-hospital', component: SelectionHospitalComponent},
   { path: 'perfil', component: ProfileComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
