@@ -1,0 +1,24 @@
+<div class="container">
+
+  <header class="login-header">
+     <mat-toolbar-row color="primary">
+      <button mat-icon-button (click)="toggleMenu()" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </header>
+</div>
+
+<mat-sidenav-container class="login-sidenav-container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    [opened]="isMenuOpen"
+    class="login-sidenav"
+  >
+    <mat-nav-list class="menu-list">
+      <a mat-list-item href="/perfil">Perfil</a>
+      <a mat-list-item href="#">Histórico</a>
+      <a mat-list-item href="#">Localização dos hospitais</a>
+    </mat-nav-list>
+  </mat-sidenav>

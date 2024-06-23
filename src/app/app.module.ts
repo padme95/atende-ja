@@ -18,14 +18,20 @@ import { MatNavList } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
+import { SelectionHospitalComponent } from './selection-hospital/selection-hospital.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    SelectionHospitalComponent,
 
   ],
   imports: [
+    AppRoutingModule,
     FlexLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,

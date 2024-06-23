@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.services';
 import { Patient } from '../model/patient.interface';
+import { cpfValidator } from './cpf-validator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,48 +13,19 @@ import { Patient } from '../model/patient.interface';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isMenuOpen: boolean = false;
-  patientMock: Patient = {
-    tipo_fila: "",
-    email: "teste123@gmail.com",
-    possui_necessidades_especiais: true,
-    id: "",
-    name: "Joao da Silva",
-    cpf: "52781359050",
-    genero: "Mulher",
-    data_nascimento: "1989-01-01",
-    senha: "12345678",
-    necessidades_especiais: "",
-    telefone: "5511123412341"
-  }
-
-  patientMockUpdate: Patient = {
-    tipo_fila: "",
-    email: "teste123@gmail.com",
-    possui_necessidades_especiais: true,
-    id: "a0GDn00000Eubj0MAB",
-    name: "Joao da Silva",
-    cpf: "52781359050",
-    genero: "Mulher",
-    data_nascimento: "1989-01-01",
-    senha: "12345678",
-    necessidades_especiais: "",
-    telefone: "5511123412341"
-  }
- 
 
   constructor(private fb: FormBuilder, private apiService : ApiService) {}
+  constructor(
+    private fb: FormBuilder,
+     private router: Router
+  ) {}
 
   ngOnInit() {
     
     this.loginForm = this.fb.group({
-      cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      senha: ['', [Validators.required, Validators.minLength(6)]]
+      cpf: ['', [Validators.required, Validators.maxLength(11), cpfValidator()]],
+      senha: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]]
     });
-  
-  }
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
 
   login() {
@@ -115,6 +88,7 @@ export class LoginComponent implements OnInit {
         console.log("Delete Patient:" + x);
       }) ;
 
+      this.router.navigate(['/selecione-hospital']);
     } else {
       this.loginForm.markAllAsTouched();
     }
