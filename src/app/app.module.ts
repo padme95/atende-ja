@@ -23,6 +23,9 @@ import { SelectionHospitalComponent } from './selection-hospital/selection-hospi
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { RegisterComponent } from './register/register.component';
     ProfileComponent,
     SelectionHospitalComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutComponent,
+    ContactComponent,
+    HomeComponent
 
   ],
   imports: [
