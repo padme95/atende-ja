@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { cpfValidator } from './cpf-validator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +12,20 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isMenuOpen: boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+     private router: Router
+
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      senha: ['', [Validators.required, Validators.minLength(6)]]
+      cpf: ['', [Validators.required, Validators.maxLength(11), cpfValidator()]],
+      senha: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]]
     });
+
   }
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -28,8 +36,7 @@ export class LoginComponent implements OnInit {
       const { cpf, senha } = this.loginForm.value;
       console.log('CPF:', cpf);
       console.log('Senha:', senha);
-      // Exemplo simples: redirecionar para outra página após o login
-      // this.router.navigate(['/dashboard']); // import { Router } from '@angular/router';
+      this.router.navigate(['/selecione-hospital']);
     } else {
       this.loginForm.markAllAsTouched();
     }
