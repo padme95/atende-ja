@@ -14,10 +14,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isMenuOpen: boolean = false;
 
-  constructor(private fb: FormBuilder, private apiService : ApiService) {}
+
   constructor(
     private fb: FormBuilder,
-     private router: Router
+     private router: Router,
+     private apiService : ApiService
   ) {}
 
   ngOnInit() {
