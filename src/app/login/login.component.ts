@@ -27,6 +27,10 @@ export class LoginComponent implements OnInit {
       cpf: ['', [Validators.required, Validators.maxLength(11), cpfValidator()]],
       senha: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]]
     });
+
+    if (localStorage.getItem("user")) {
+      this.router.navigate(['/selecione-hospital']);
+    }
   }
 
   login() {
