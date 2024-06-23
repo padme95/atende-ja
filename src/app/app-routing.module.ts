@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'contato', component: ContactComponent},
   { path: 'registrar', component: RegisterComponent},
   { path: 'bem-vindo', component: WelcomeComponent},
+  { path: 'acompanhar-fila', component: MonitorQueueComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
