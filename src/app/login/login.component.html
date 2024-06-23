@@ -1,0 +1,93 @@
+<!-- login.component.html -->
+<div class="">
+  <div class="teste">
+    <header class="login-header">
+      <!-- <mat-toolbar-row color="primary">
+        <button mat-icon-button (click)="toggleMenu()" class="menu-button">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar-row> -->
+
+      <!-- <mat-nav-list class="menu-list">
+        <a mat-list-item href="#">Perfil</a>
+        <a mat-list-item href="#">Histórico</a>
+        <a mat-list-item href="#">Localização dos hospitais</a>
+      </mat-nav-list> -->
+    </header>
+  </div>
+
+  <div class="">
+    <mat-sidenav-container class="login-sidenav-container">
+      <!-- <mat-sidenav
+        #sidenav
+        mode="side"
+        [opened]="isMenuOpen"
+        class="login-sidenav"
+      >
+        <mat-nav-list class="menu-list">
+          <a mat-list-item href="#">Perfil</a>
+          <a mat-list-item href="#">Histórico</a>
+          <a mat-list-item href="#">Localização dos hospitais</a>
+        </mat-nav-list>
+      </mat-sidenav> -->
+      <mat-sidenav-content class="login-content">
+        <div class="login-form-container">
+          <mat-card class="login-card">
+            <mat-card-header>
+              <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              <form
+                [formGroup]="loginForm"
+                class="login-form"
+                fxLayout="column"
+                fxLayoutGap="20px"
+              >
+                <mat-form-field appearance="fill">
+                  <mat-label>CPF</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="cpf"
+                    maxlength="11"
+                    required
+                  />
+                  <mat-error *ngIf="cpf?.hasError('required')"
+                    >CPF é obrigatório</mat-error
+                  >
+                  <mat-error *ngIf="cpf?.hasError('cpfInvalid')"
+                    >CPF inválido</mat-error
+                  >
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Senha</mat-label>
+                  <input
+                    matInput
+                    type="password"
+                    formControlName="senha"
+                    required
+                  />
+                  <mat-error *ngIf="senha?.hasError('required')"
+                    >Senha é obrigatória</mat-error
+                  >
+                  <mat-error *ngIf="senha?.hasError('minlength')"
+                    >Senha deve ter pelo menos 5 caracteres</mat-error
+                  >
+                  <mat-error *ngIf="senha?.hasError('maxlength')"
+                    >Senha deve ter no máximo 8 caracteres</mat-error
+                  >
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" (click)="login()">
+                  Entrar
+                </button>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
