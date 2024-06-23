@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
 
     if (localStorage.getItem("user")) {
       this.router.navigate(['/selecione-hospital']);
+    } else {
+      localStorage.clear();
     }
   }
 
@@ -51,6 +53,8 @@ export class LoginComponent implements OnInit {
         if (x != "Usuário não encontrado") {
           localStorage.setItem("user", x);
           //redirect home
+          // Apenas faz o redirect se conseguir pegar o usuário
+          this.router.navigate(['/selecione-hospital']);
         } else {
           window.alert(x);
           // Limpa cache
@@ -58,7 +62,7 @@ export class LoginComponent implements OnInit {
         }
       });
       
-      this.router.navigate(['/selecione-hospital']);
+      
     } else {
       this.loginForm.markAllAsTouched();
     }
