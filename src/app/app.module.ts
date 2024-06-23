@@ -17,6 +17,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { MatNavList } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { SelectionHospitalComponent } from './selection-hospital/selection-hospital.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +44,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatIcon,
     MatSidenav,
     MatNavList,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [RouterOutlet, provideAnimationsAsync()],
