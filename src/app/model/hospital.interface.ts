@@ -1,4 +1,4 @@
-export interface hospital {
+export interface Hospital {
     longitude: number,
     QtdFIlaAGLeitoInternacao: number,
     id: string,

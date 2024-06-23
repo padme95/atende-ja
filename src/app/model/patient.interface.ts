@@ -8,5 +8,6 @@ export interface Patient {
     genero: string,
     data_nascimento: string,
     senha: string,
-    necessidades_especiais: string
+    necessidades_especiais: string,
+    telefone: string
   }

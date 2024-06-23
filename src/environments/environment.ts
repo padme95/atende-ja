@@ -12,13 +12,13 @@ export const environment = {
     userLoginUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_Login", //ok
 
     //Usuário
-    createPatientUrl : "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_CreatePatient",
+    createPatientUrl : "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_CreatePatient", //ok
     consultPatientUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_ConsultPatient", // ok
-    updatePatientUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_UpdatePatient",
+    updatePatientUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_UpdatePatient", // OK
     deletePatientUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_DeletePatient",
     
     //Hospital
-    getAllHospitalUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_GetHospital",
-    getSpecificHospitalUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_GetSpecificHospital?hospital_id="
+    getAllHospitalUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_GetHospital", //ok
+    getSpecificHospitalUrl: "https://certificationcom5-dev-ed.develop.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/AtendeJa_GetSpecificHospital?hospital_id=" // ok
     
   };
