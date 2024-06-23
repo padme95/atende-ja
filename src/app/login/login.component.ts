@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.services';
 import { Patient } from '../model/patient.interface';
-import { cpfValidator } from './cpf-validator';
+import { cpfValidator } from '../cpf-validator';
 import { Router } from '@angular/router';
 
 @Component({
