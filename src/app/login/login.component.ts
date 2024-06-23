@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  isMenuOpen: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -24,11 +23,6 @@ export class LoginComponent implements OnInit {
       senha: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]]
     });
 
-  }
-
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
 
   login() {
