@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import { MatNavList } from '@angular/material/list';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,6 +22,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SelectionHospitalComponent } from './selection-hospital/selection-hospital.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ProfileComponent,
     SelectionHospitalComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
 
   ],
   imports: [
@@ -45,6 +47,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatToolbar,
     MatIcon,
     MatSidenav,
+    MatSidenavContainer,
     MatNavList,
     ReactiveFormsModule,
     HttpClientModule

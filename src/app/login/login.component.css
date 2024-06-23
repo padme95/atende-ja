@@ -23,6 +23,7 @@ body, html {
 .login-form-container {
   padding-top: 3%;
   padding-left: 10%;
+  background-color: #00C3A5;
 }
 
 .mat-mdc-card {
@@ -49,7 +50,8 @@ body, html {
 }
 
 .facebook-button {
-  background-color: #3b5998;
+  background-color: #4461F2 !important;
+  color: white !important;
   font-weight: bold;
   font-size: 14px;
   text-transform: none; /* Remove o texto em maiúsculas */
@@ -76,5 +78,10 @@ body, html {
   margin-right: 10px;
 }
 
+h1,h2 {
+  color: white;
+  font-family: Tahoma;
+  font-size: medium;
+}
 
 
