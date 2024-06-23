@@ -8,4 +8,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'atende-ja';
+
+ public loginForm?: boolean;
 }
