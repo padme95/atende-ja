@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faHome, faUser, faCalendar } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-welcome',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
+
+  faHome = faHome;
+  faCalendar = faCalendar
+  faUser = faUser;
 
 }

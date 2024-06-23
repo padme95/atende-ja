@@ -39,6 +39,6 @@ padding: 1em;
   list-style: none;
 }
 
-.nav-item {
-  margin: 10px;
+.custom-color {
+  color: black;
 }

@@ -27,6 +27,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -40,10 +43,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ContactComponent,
     HomeComponent,
     WelcomeComponent
-    
+
 
   ],
   imports: [
+    FontAwesomeModule,
     AppRoutingModule,
     FlexLayoutModule,
     BrowserModule,
@@ -66,4 +70,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor() {
+    // Adiciona todos os ícones do Font Awesome Solid à biblioteca
+    library.add(fas);
+  }
+
+ }
