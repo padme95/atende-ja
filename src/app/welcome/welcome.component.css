@@ -6,11 +6,12 @@ body {
 display: flex;
 min-height: 100vh;
 flex-direction: row;
-margin: 0;
 }
 .col-1 {
 background: #e9fcfa;
 width: 90px;
+display: flex;
+
 }
 .col-2 {
 display: flex;
@@ -33,3 +34,11 @@ height: 20vh;
 padding: 1em;
 }
 
+
+.navbar-nav {
+  list-style: none;
+}
+
+.nav-item {
+  margin: 10px;
+}
