@@ -29,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ProfileComponent,
     SelectionHospitalComponent,
+    NavbarComponent
 
   ],
   imports: [
@@ -46,7 +47,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSidenav,
     MatNavList,
     ReactiveFormsModule,
-    NavbarComponent,
     HttpClientModule
 
   ],
