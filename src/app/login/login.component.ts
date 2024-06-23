@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     });
 
     if (localStorage.getItem("user")) {
-      this.router.navigate(['/selecione-hospital']);
+      this.router.navigate(['/bem-vindo']);
     } else {
       localStorage.clear();
     }
@@ -47,28 +47,27 @@ export class LoginComponent implements OnInit {
         console.log("Token SF:" + x);
         localStorage.setItem("SFToken", x);
 
+        var token = localStorage.getItem("SFToken") ?? "";
+
+        this.apiService.userLogin(token, cpf, senha).subscribe(x=> {
+          console.log("Resposta do Login:" + x);
+          if (x != "Usuário não encontrado") {
+            localStorage.setItem("user", x);
+            //redirect home
+            // Apenas faz o redirect se conseguir pegar o usuário
+            //this.valueFormChange.emit(this.loginForm as any)
+            this.router.navigate(['/bem-vindo']);
+
+          } else {
+            window.alert(x);
+            // Limpa cache
+            localStorage.clear();
+          }
+        });
+        
       }) ;
 
-      var token = localStorage.getItem("SFToken") ?? "";
-
-      this.apiService.userLogin(token, cpf, senha).subscribe(x=> {
-        console.log("Resposta do Login:" + x);
-        if (x != "Usuário não encontrado") {
-          localStorage.setItem("user", x);
-          //redirect home
-          // Apenas faz o redirect se conseguir pegar o usuário
-          //this.valueFormChange.emit(this.loginForm as any)
-          this.router.navigate(['/bem-vindo']);
-
-        } else {
-          window.alert(x);
-          // Limpa cache
-          localStorage.clear();
-        }
-      });
-
-    
-
+      
     } else {
       this.loginForm.markAllAsTouched();
     }
