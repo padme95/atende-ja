@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  areaLogada: boolean = localStorage.getItem("user") ? false : true;
+  
+  ngOnInit() {
+    this.areaLogada = localStorage.getItem("user") ? false : true;
+  }
 
-}
+} 
+

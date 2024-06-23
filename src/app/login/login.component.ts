@@ -57,7 +57,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("user", x);
           //redirect home
           // Apenas faz o redirect se conseguir pegar o usuário
-          this.router.navigate(['/selecione-hospital']);
+          //this.valueFormChange.emit(this.loginForm as any)
+          this.router.navigate(['/bem-vindo']);
+
         } else {
           window.alert(x);
           // Limpa cache
@@ -65,8 +67,7 @@ export class LoginComponent implements OnInit {
         }
       });
 
-      this.valueFormChange.emit(this.loginForm as any)
-      this.router.navigate(['/bem-vindo']);
+    
 
     } else {
       this.loginForm.markAllAsTouched();
