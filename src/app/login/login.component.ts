@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.services';
 import { Patient } from '../model/patient.interface';
@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   isMenuOpen: boolean = false;
 
-
   constructor(
     private fb: FormBuilder,
      private router: Router,
@@ -22,7 +21,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
+
     this.loginForm = this.fb.group({
       cpf: ['', [Validators.required, Validators.maxLength(11), cpfValidator()]],
       senha: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(8)]]
@@ -35,15 +34,19 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  @Output() valueFormChange = new EventEmitter<boolean>();
+
+
   login() {
     if (this.loginForm.valid) {
       const { cpf, senha } = this.loginForm.value;
       console.log('CPF:', cpf);
       console.log('Senha:', senha);
-      
+
       this.apiService.getToken().subscribe(x=>{
         console.log("Token SF:" + x);
-        localStorage.setItem("SFToken", x);  
+        localStorage.setItem("SFToken", x);
+
       }) ;
 
       var token = localStorage.getItem("SFToken") ?? "";
@@ -61,8 +64,10 @@ export class LoginComponent implements OnInit {
           localStorage.clear();
         }
       });
-      
-      
+
+      this.valueFormChange.emit(this.loginForm as any)
+      this.router.navigate(['/bem-vindo']);
+
     } else {
       this.loginForm.markAllAsTouched();
     }
