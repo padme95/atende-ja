@@ -37,6 +37,8 @@ padding: 1em;
 
 .navbar-nav {
   list-style: none;
+  padding: 20px;
+  margin-top: 150px;
 }
 
 .custom-color {
@@ -49,4 +51,8 @@ font-size: 20px;
 ::ng-deep svg.svg-inline--fa.fa-calendar.fa-2x {
   width: 50px !important;
   height: 40px !important;
+}
+
+.nav-item {
+  margin-bottom: 40px;
 }
