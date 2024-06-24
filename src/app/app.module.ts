@@ -32,6 +32,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { TriageComponent } from './triage/triage.component';
 import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
+import { NavSideComponent } from './nav-side/nav-side.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
     HomeComponent,
     WelcomeComponent,
     TriageComponent,
-    MonitorQueueComponent
+    MonitorQueueComponent,
+    NavSideComponent
   ],
   imports: [
     FontAwesomeModule,

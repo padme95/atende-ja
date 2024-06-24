@@ -1,0 +1,58 @@
+
+* {
+  box-sizing: border-box;
+}
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: row;
+}
+.col-1 {
+background: #e9fcfa;
+width: 90px;
+display: flex;
+
+}
+.col-2 {
+display: flex;
+flex-direction: column;
+flex: 5;
+}
+.content {
+display: flex;
+flex-direction: row;
+margin-top: 30px;
+margin-left: 40px;
+}
+.content > div {
+flex: 3;
+min-height: 60vh;
+}
+
+header {
+height: 20vh;
+padding: 1em;
+}
+
+
+.navbar-nav {
+  list-style: none;
+  padding: 20px;
+  margin-top: 150px;
+}
+
+.custom-color {
+  color: rgb(74, 99, 100);
+font-size: 20px;
+}
+
+
+
+::ng-deep svg.svg-inline--fa.fa-calendar.fa-2x {
+  width: 50px !important;
+  height: 40px !important;
+}
+
+.nav-item {
+  margin-bottom: 40px;
+}
