@@ -4,8 +4,6 @@ import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-monitor-queue',
-  standalone: true,
-  imports: [GoogleMapsModule],
   templateUrl: './monitor-queue.component.html',
   styleUrl: './monitor-queue.component.css'
 })
