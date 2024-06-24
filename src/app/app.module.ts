@@ -32,6 +32,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { TriageComponent } from './triage/triage.component';
 import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
     HomeComponent,
     WelcomeComponent,
     TriageComponent,
+    ScheduleComponent,
     MonitorQueueComponent
   ],
   imports: [
@@ -65,6 +68,7 @@ import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
     MatSidenavContainer,
     MatNavList,
     ReactiveFormsModule,
+    GoogleMapsModule,
     HttpClientModule
 
   ],
