@@ -1,0 +1,40 @@
+/* layout.component.css */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Uma coluna para o header, uma para o body e uma para a sidebar */
+    gap: 20px;
+  }
+  
+  .header, .body, .sidebar {
+    padding: 20px;
+    border: 1px solid #ccc; /* Guia de bordas para layout */
+  }
+  
+  .header {
+    grid-column: 1 / span 3; /* Ocupa todas as três colunas */
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+  }
+  
+  .header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .header-sidebar {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Move os botões para a direita */
+  }
+  
+  .body {
+    grid-column: 2; /* Ocupa apenas a segunda coluna */
+  }
+  
+  .sidebar {
+    grid-column: 3; /* Ocupa apenas a terceira coluna */
+  }
+  

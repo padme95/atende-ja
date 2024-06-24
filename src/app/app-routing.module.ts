@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MonitorQueueComponent } from './monitor-queue/monitor-queue.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { TriageComponent } from './triage/triage.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'bem-vindo', component: WelcomeComponent},
   { path: 'acompanhar-fila', component: MonitorQueueComponent},
   { path: 'agendamento', component: ScheduleComponent},
+  { path: 'triagem', component: TriageComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
