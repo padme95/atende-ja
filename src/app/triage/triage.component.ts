@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { faHome, faUser, faCalendar, faUsersLine, faLaptopMedical} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrl: './schedule.component.css'
+  selector: 'app-triage',
+  templateUrl: './triage.component.html',
+  styleUrl: './triage.component.css'
 })
-export class ScheduleComponent {
-  center: google.maps.LatLngLiteral = {lat: 24, lng: 12};
-  zoom = 4;
-
+export class TriageComponent {
   faHome = faHome;
   faCalendar = faCalendar
   faUser = faUser;
