@@ -1,3 +1,9 @@
+# Live Test
+
+http://54.198.178.135:4200/login
+
+http://54.198.178.135:4200/bem-vindo
+
 # AtendeJa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
